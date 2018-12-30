@@ -8,11 +8,11 @@ import java.util.List;
 public class MainTest{
 
     public List<Student> StudentData() {
-        Student obj1 = new Student(1,"pratima", 22);
-        Student obj2 = new Student(2,"pratima",22);
-        Student obj3 = new Student(3,"pratima",22);
-        Student obj4 = new Student(4,"pratima",22);
-        Student obj5 = new Student(5,"pratima",22);
+        Student obj1 = new Student(2,"pratima", 11);
+        Student obj2 = new Student(3,"rani",22);
+        Student obj3 = new Student(1,"alice",20);
+        Student obj4 = new Student(5,"pratima",25);
+        Student obj5 = new Student(4,"pratima",22);
         List<Student> list = new ArrayList<Student>();
         list.add(obj1);
         list.add(obj2);
@@ -21,6 +21,10 @@ public class MainTest{
         list.add(obj5);
 
         Collections.sort(list,new StudentSorter());
+
+        for(int i=0;i<list.size();i++){
+            System.out.println(list.get(i).getId() +" "+ list.get(i).getName()+" "+list.get(i).getAge());
+        }
         return list;
     }
 }
