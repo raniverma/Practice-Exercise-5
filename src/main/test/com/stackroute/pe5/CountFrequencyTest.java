@@ -29,4 +29,9 @@ public class CountFrequencyTest {
         freq.put("three",2);
         assertEquals(freq,obj.CountFreqOfWords(str));
     }
+    @Test
+    public void NullCase(){
+        String str="";
+        assertNull(obj.CountFreqOfWords(str));
+    }
 }

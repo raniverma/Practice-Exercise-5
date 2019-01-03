@@ -5,6 +5,9 @@ import java.util.*;
 public class SortASet {
 
     public Set<String> sortedSet(Set<String> set) {
+        if(set.size()==0)
+            return null;
+        else{
         List<String> list = new ArrayList<String>();
         list.addAll(set);
         Collections.sort(list);
@@ -21,5 +24,6 @@ public class SortASet {
 
         Set<String> newSet=new LinkedHashSet<String>(list);
         return newSet;
+        }
     }
 }

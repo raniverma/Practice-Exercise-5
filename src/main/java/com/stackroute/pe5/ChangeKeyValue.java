@@ -6,16 +6,21 @@ import java.util.Map;
 public class ChangeKeyValue {
 
     public Map<String,String> changeKeyValueInMap(Map<String,String> mp){
-        for(Map.Entry<String,String> entry:mp.entrySet()){
-            if(entry.getKey().equals("val1")&&entry.getValue()!=null){
-                String value=entry.getValue();
-                mp.put("val1"," ");
-                mp.put("val2",value);
+        if(mp.size()==0)
+            return null;
+        else if(mp.size()==1)
+            return mp;
+        else{
+            for (Map.Entry<String, String> entry : mp.entrySet()) {
+                if (entry.getKey().equals("val1") && entry.getValue() != null) {
+                    String value = entry.getValue();
+                    mp.put("val1", " ");
+                    mp.put("val2", value);
+                } else {
+                    continue;
+                }
             }
-            else{
-                continue;
-            }
+            return mp;
         }
-        return mp;
     }
 }

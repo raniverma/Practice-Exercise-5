@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,18 +24,14 @@ public class SortASetTest {
 
     @Test
     public void sortedSet() {
-        Set<String> inputSet=new HashSet<String>();
-        inputSet.add("Harry");
-        inputSet.add("Olive");
-        inputSet.add("Alice");
-        inputSet.add("Bluto");
-        inputSet.add("Eugene");
-        Set<String> resSet=new HashSet<String>();
-        resSet.add("Alice");
-        resSet.add("Bluto");
-        resSet.add("Eugene");
-        resSet.add("Harry");
-        resSet.add("Olive");
+        Set<String> inputSet= new HashSet<String>(Arrays.asList(new String[]{"Harry", "Olive", "Alice","Bluto","Eugene"}));
+        Set<String> resSet= new HashSet<String>(Arrays.asList(new String[]{"Alice", "Bluto", "Eugene","Harry","Olive"}));
         assertEquals(resSet,obj.sortedSet(inputSet));
+    }
+
+    @Test
+    public void nullSetCase(){
+        Set<String> inputSet=new HashSet<String>();
+        assertNull(obj.sortedSet(inputSet));
     }
 }

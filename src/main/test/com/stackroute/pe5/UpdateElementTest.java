@@ -22,16 +22,28 @@ public class UpdateElementTest {
 
     @Test
     public void updateCorrect(){
-        List<String > input=new ArrayList<String>();
-        input.add("grapes");
-        input.add("mango");
-        input.add("orange");
-        input.add("banana");
+        List<String > list=new ArrayList<String>();
+        list.add("grapes");
+        list.add("mango");
+        list.add("orange");
+        list.add("banana");
         List<String> expected=new ArrayList<String>();
-        input.add("apple");
-        input.add("mango");
-        input.add("orange");
-        input.add("banana");
-        assertEquals(expected,obj.UpdateElements(input,"apple",0));
+        expected.add("apple");
+        expected.add("mango");
+        expected.add("orange");
+        expected.add("banana");
+        assertEquals(expected,obj.UpdateElements(list,"apple",0));
+    }
+    @Test
+    public void updateNull(){
+        List<String > list=new ArrayList<String>();
+        assertNull(obj.UpdateElements(list,"pratima",1));
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testIndexOutOfBoundsException() {
+        List<String> list = new ArrayList<String >();
+        list.add("grapes");
+        list=obj.UpdateElements(list,"apple",1);
     }
 }

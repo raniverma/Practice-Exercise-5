@@ -22,25 +22,31 @@ public class CheckOccurrenceTest {
 
     @Test
     public void checkOccurrenceOfaWordCorrect(){
-        String  arr[] ={"a","b","c","d","a","c","c"};
+        String  array[] ={"a","b","c","d","a","c","c"};
         Map<String,Boolean> mp=new HashMap<String,Boolean>();
         mp.put("a",true);
         mp.put("b",false);
         mp.put("c",true);
         mp.put("d",false);
-        assertEquals(mp,obj.checkOccurrenceOfWords(arr));
+        assertEquals(mp,obj.checkOccurrenceOfWords(array));
     }
 
     @Test
     public void checkOccurrenceOfaWordInCorrect(){
-        String  arr[] ={"a","b","c","d","a","c","c","d","e"};
+        String  array[] ={"a","b","c","d","a","c","c","d","e"};
         Map<String,Boolean> mp=new HashMap<String,Boolean>();
         mp.put("a",true);
         mp.put("b",false);
         mp.put("c",true);
         mp.put("d",true);
         mp.put("e",false);
-        assertEquals(mp,obj.checkOccurrenceOfWords(arr));
+        assertEquals(mp,obj.checkOccurrenceOfWords(array));
+    }
+
+    @Test
+    public void NullCase(){
+        String array[]={};
+        assertNull(obj.checkOccurrenceOfWords(array));
     }
 
 }

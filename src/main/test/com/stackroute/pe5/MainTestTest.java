@@ -21,7 +21,7 @@ public class MainTestTest {
     }
 
     @Test
-    public void studentData() {
+    public void studentDataSort() {
         Student obj1 = new Student(2,"pratima", 11);
         Student obj2 = new Student(1,"alice",20);
         Student obj3 = new Student(4,"pratima",22);
@@ -34,7 +34,7 @@ public class MainTestTest {
         list.add(obj3);
         list.add(obj4);
         list.add(obj5);
-        List<Student> ans=obj.StudentData();
+        List<Student> ans=obj.StudentData(list);
         String expected="",actual="";
         for(int i=0;i<list.size();i++) {
              expected+=list.get(i).getId()+" "+list.get(i).getName()+" "+list.get(i).getAge()+" ";
@@ -44,5 +44,11 @@ public class MainTestTest {
 
         }
         assertEquals(expected,actual);
+    }
+
+    @Test
+    public void  CheckNullCase(){
+        List<Student> list=new ArrayList<Student>();
+        assertNull(obj.StudentData(list));
     }
 }

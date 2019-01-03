@@ -40,5 +40,18 @@ public class ChangeKeyValueTest {
         resMap.put("val2","java");
         assertEquals(resMap,obj.changeKeyValueInMap(inputMap));
     }
+    @Test
+    public void IsnNull(){
+        Map<String,String> map=new HashMap<String, String>();
+        assertNull(obj.changeKeyValueInMap(map));
+    }
+    @Test
+    public void OnlyElement(){
+        Map<String,String> inputMap=new HashMap<String, String>();
+        inputMap.put("val1","java");
+        Map<String,String> resMap=new HashMap<String, String>();
+        resMap.put("val1","java");
+        assertEquals(resMap,obj.changeKeyValueInMap(inputMap));
+    }
 
 }
