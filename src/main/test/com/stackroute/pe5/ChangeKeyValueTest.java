@@ -21,7 +21,7 @@ public class ChangeKeyValueTest {
     }
 
     @Test
-    public void changekeyValueCorrect() {
+    public void changekeyValueCorrect(){
         Map<String,String> inputMap=new HashMap<String, String>();
         inputMap.put("val1","mars");
         inputMap.put("val2","saturn");

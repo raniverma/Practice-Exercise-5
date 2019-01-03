@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -22,16 +23,8 @@ public class UpdateElementTest {
 
     @Test
     public void updateCorrect(){
-        List<String > list=new ArrayList<String>();
-        list.add("grapes");
-        list.add("mango");
-        list.add("orange");
-        list.add("banana");
-        List<String> expected=new ArrayList<String>();
-        expected.add("apple");
-        expected.add("mango");
-        expected.add("orange");
-        expected.add("banana");
+        List<String> list= new ArrayList<String>(Arrays.asList(new String[]{"grapes", "mango", "orange","banana"}));
+        List<String> expected= new ArrayList<String>(Arrays.asList(new String[]{"apple", "mango", "orange","banana"}));
         assertEquals(expected,obj.UpdateElements(list,"apple",0));
     }
     @Test
